@@ -2,6 +2,34 @@
 
 This document summarizes the current state of the MLX OpenCL backend, highlighting key features, implemented primitives, and the overall progress. The backend aims to provide a complete, high‑performance OpenCL implementation of MLX’s core operations, with a focus on portability and distributed training.
 ---
+Sept. 15 2026
+    
+	C++: 100% tests passed out of 275
+	
+	MODEL="/models/Qwen--Qwen2-0.5B-Instruct-MLX/snapshots/master"
+
+	export MLX_OPENCL_NATIVE_HALF=0
+	export MLX_OPENCL_Q4_GEMV=1
+	unset MLX_OPENCL_Q4_GEMV_DEBUG
+	
+	mlx_lm.generate \
+	  --model "$MODEL" \
+	  --prompt "你好，请详细介绍一下GPU的工作原理、并行计算架构以及它与CPU的主要区别。" \
+	  --max-tokens 128
+	[OpenCL] Double precision support: NO (fallback to float)
+	[OpenCL] Half mode: PROMOTED (float compute, export MLX_OPENCL_NATIVE_HALF=0) on Intel(R) OpenCL Graphics
+	==========
+	GPU（图形处理器）是一种用于计算和图形处理的计算设备，它由许多微处理器（也称为GPU核心）组成，这些微处理器被设计成能够处理图形和图像处理任务。GPU的工作原理包括以下几方面：
+	
+	1. **图形处理**：GPU可以处理图形和图像处理任务，包括但不限于渲染、图像处理、图像生成等。GPU可以处理大量的数据，从而在处理复杂图形和图像时具有优势。
+	
+	2. **并行计算**：GPU可以并行处理大量的数据，从而在处理大规模数据集时具有优势。GPU可以并行处理大量的数据，
+	==========
+	Prompt: 38 tokens, 77.963 tokens-per-sec
+	Generation: 128 tokens, 14.661 tokens-per-sec
+	Peak memory: 0.284 GB
+
+
 
 Sept. 8 2026 Enhanced timing when falling back to CPU for Linear Algebra Computation when CLMAGMA_PATH is not set for GPU computing.
 
