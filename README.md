@@ -4,7 +4,6 @@ This document summarizes the current state of the MLX OpenCL backend, highlighti
 ---
 Sept. 15 midnight 2026 Many marker fixes and fused-kernel improvements
 
-	(base) jc@U1:~/Downloads/mlx_opencl_phase9b_generic_gqa_primitive$ ./run_phase9b_abba_128.sh
 	IMPORTANT: keep laptop plugged in and use the same power mode.
 	A=Phase9A Python raw custom-kernel; B=Phase9B backend primitive.
 	[OpenCL] Double precision support: NO (fallback to float)
