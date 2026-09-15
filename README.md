@@ -2,6 +2,37 @@
 
 This document summarizes the current state of the MLX OpenCL backend, highlighting key features, implemented primitives, and the overall progress. The backend aims to provide a complete, high‑performance OpenCL implementation of MLX’s core operations, with a focus on portability and distributed training.
 ---
+Sept. 15 midnight 2026 Many marker fixes and fused-kernel improvements
+
+	(base) jc@U1:~/Downloads/mlx_opencl_phase9b_generic_gqa_primitive$ ./run_phase9b_abba_128.sh
+	IMPORTANT: keep laptop plugged in and use the same power mode.
+	A=Phase9A Python raw custom-kernel; B=Phase9B backend primitive.
+	[OpenCL] Double precision support: NO (fallback to float)
+	[OpenCL] Half mode: PROMOTED (float compute, export MLX_OPENCL_NATIVE_HALF=0) on Intel(R) OpenCL Graphics
+	==========
+	GPU（图形处理器）是一种用于计算和图形处理的计算设备，它由许多微处理器（也称为GPU核心）组成，这些微处理器被设计成能够处理图形和图像处理任务。GPU的工作原理包括以下几方面：
+	
+	1. **图形处理**：GPU可以处理图形和图像处理任务，包括但不限于渲染、图像处理、图像生成等。GPU可以处理大量的数据，从而在处理复杂图形和图像时具有优势。
+	
+	2. **并行计算**：GPU可以并行处理大量的数据，从而在处理大规模数据集时具有优势。GPU可以并行处理大量的数据，
+	==========
+	Prompt: 38 tokens, 118.601 tokens-per-sec
+	Generation: 128 tokens, 58.797 tokens-per-sec
+	Peak memory: 0.373 GB
+	[OpenCL] Double precision support: NO (fallback to float)
+	[OpenCL] Half mode: PROMOTED (float compute, export MLX_OPENCL_NATIVE_HALF=0) on Intel(R) OpenCL Graphics
+	==========
+	GPU（图形处理器）是一种用于计算和图形处理的计算设备，它由许多微处理器（也称为GPU核心）组成，这些微处理器被设计成能够处理图形和图像处理任务。GPU的工作原理包括以下几方面：
+	
+	1. **图形处理**：GPU可以处理图形和图像处理任务，包括但不限于渲染、图像处理、图像生成等。GPU可以处理大量的数据，从而在处理复杂图形和图像时具有优势。
+	
+	2. **并行计算**：GPU可以并行处理大量的数据，从而在处理大规模数据集时具有优势。GPU可以并行处理大量的数据，
+	==========
+	Prompt: 38 tokens, 120.044 tokens-per-sec
+	Generation: 128 tokens, 60.682 tokens-per-sec
+	Peak memory: 0.373 GB
+
+
 Sept. 15 2026
     
 	C++: 100% tests passed out of 275
