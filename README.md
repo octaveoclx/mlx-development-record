@@ -2,6 +2,12 @@
 
 This document summarizes the current state of the MLX OpenCL backend, highlighting key features, implemented primitives, and the overall progress. The backend aims to provide a complete, high‑performance OpenCL implementation of MLX’s core operations, with a focus on portability and distributed training.
 ---
+Oct.10.2026
+Running omlx on opencl backend? Yes!
+
+<img width="2988" height="1982" alt="截图 2026-10-10 21-59-37" src="https://github.com/user-attachments/assets/20923634-0542-4480-92d8-0e1bcf11d27d" />
+
+
 
 Sept. 21 2026 
 
