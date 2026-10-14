@@ -5,7 +5,9 @@ This document summarizes the current state of the MLX OpenCL backend, highlighti
 
 Oct. 14 2026
 Running Mujoco? Yes!
+
 <img width="400" height="300" alt="barkour_trot_long" src="https://github.com/user-attachments/assets/c5a99236-78bb-45d9-a338-daf13ecdac11" />
+<img width="400" height="300" alt="barkour_long_walk" src="https://github.com/user-attachments/assets/df749481-4fc9-40c0-8898-cdb379b20735" />
 
 
 
