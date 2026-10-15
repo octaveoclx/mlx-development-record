@@ -15,34 +15,33 @@ Benchmarks measured on **Linux x86_64** with **Intel(R) OpenCL Graphics**, `mlx 
 - **device**: MLX array in and out (zero-copy GPU pipeline)
 - Every output passed the SciPy correctness gate before timing; medians of 5 runs after 2 warmups.
 
-		| function | shape | scipy | mlx-signal (e2e) | mlx-signal (device) | speedup (e2e / device) |
-		|---|---|---:|---:|---:|---:|
-		| upfirdn (complex IQ) | 16ch × 2^20 c64, down=10, 201 taps | 1293.74 ms | 104.06 ms | 86.47 ms | **12.4x / 15.0x** |
-		| upfirdn | 64ch × 2^18, up=2 down=3, 255 taps | 1583.98 ms | 152.96 ms | 151.14 ms | **10.4x / 10.5x** |
-		| stft | 4ch × 2^18, nperseg=1024 | 42.77 ms | 8.32 ms | 7.27 ms | **5.1x / 5.9x** |
-		| csd | 8ch × 2^18, nperseg=1024 | 179.55 ms | 51.62 ms | 48.49 ms | **3.5x / 3.7x** |
-		| welch | 64ch × 2^18, nperseg=1024 | 900.75 ms | 262.31 ms | 252.30 ms | **3.4x / 3.6x** |
-		| sosfiltfilt (IIR) | 64ch × 2^18, butter-8 | 432.69 ms | 174.90 ms | 124.64 ms | **2.5x / 3.5x** |
-		| sosfilt (IIR, 1ch scan) | 1ch × 2^22, butter-8 | 36.78 ms | 13.56 ms | 11.16 ms | **2.7x / 3.3x** |
-		| lfilter (IIR, 1ch scan) | 1ch × 2^22, butter-4 tf | 25.83 ms | 11.49 ms | 7.95 ms | **2.2x / 3.2x** |
-		| coherence | 8ch × 2^18, nperseg=1024 | 416.00 ms | 129.71 ms | 135.88 ms | **3.2x / 3.1x** |
-		| resample_poly | 4ch, 48k->44.1k (147/160) | 18.62 ms | 7.33 ms | 6.27 ms | **2.5x / 3.0x** |
-		| filtfilt (FIR) | 8ch × 2^18, 257 taps | 173.05 ms | 63.32 ms | 60.19 ms | **2.7x / 2.9x** |
-		| filtfilt (IIR) | 64ch × 2^18, butter-4 tf | 343.36 ms | 172.63 ms | 116.40 ms | **2.0x / 2.9x** |
-		| lfilter (FIR) | 8ch × 2^18, 257 taps | 71.66 ms | 30.76 ms | 28.74 ms | **2.3x / 2.5x** |
-		| fftconvolve | 2^19 × 1025 | 25.55 ms | 10.93 ms | 10.44 ms | **2.3x / 2.4x** |
-		| peak_prominences | 2^20, 0.3M peaks | 38.56 ms | 22.09 ms | — | **1.7x** |
-		| correlate (batched) | 64ch × 2^18, 4096 taps | 350.48 ms | 318.37 ms | 259.91 ms | **1.1x / 1.3x** |
-		| lfilter (IIR) | 64ch × 2^18, butter-4 tf | 140.64 ms | 167.71 ms | 126.01 ms | **0.8x / 1.1x** |
-		| correlate (auto) | 2^18 autocorrelation | 14.60 ms | 14.15 ms | 13.33 ms | **1.0x / 1.1x** |
-		| find_peaks | 2^20, prominence=1 | 55.26 ms | 56.89 ms | — | **1.0x** |
-		| sosfilt (IIR) | 64ch × 2^18, butter-8 | 190.10 ms | 203.47 ms | 133.81 ms | **0.9x / 1.4x** |
-		| spectrogram | 4ch × 2^18 | 16.03 ms | 20.49 ms | 17.01 ms | **0.8x / 0.9x** |
-		| fftconvolve (pair) | 2^18 × 2^18 | 14.98 ms | 21.17 ms | 21.28 ms | 0.7x / 0.7x |
-		| resample (FFT) | 2^20 -> 2^18 | 12.66 ms | 20.35 ms | 18.76 ms | 0.6x / 0.7x |
-		| hilbert | 2^20 | 30.23 ms | 47.05 ms | 48.14 ms | 0.6x / 0.6x |
-		| istft | 4ch × 2^18, nperseg=1024 | 18.40 ms | 36.87 ms | 33.22 ms | 0.5x / 0.6x |
-
+| function | shape | scipy | mlx-signal (e2e) | mlx-signal (device) | speedup (e2e / device) |
+|---|---|---:|---:|---:|---:|
+| upfirdn (complex IQ) | 16ch × 2^20 c64, down=10, 201 taps | 1293.74 ms | 104.06 ms | 86.47 ms | **12.4x / 15.0x** |
+| upfirdn | 64ch × 2^18, up=2 down=3, 255 taps | 1583.98 ms | 152.96 ms | 151.14 ms | **10.4x / 10.5x** |
+| stft | 4ch × 2^18, nperseg=1024 | 42.77 ms | 8.32 ms | 7.27 ms | **5.1x / 5.9x** |
+| csd | 8ch × 2^18, nperseg=1024 | 179.55 ms | 51.62 ms | 48.49 ms | **3.5x / 3.7x** |
+| welch | 64ch × 2^18, nperseg=1024 | 900.75 ms | 262.31 ms | 252.30 ms | **3.4x / 3.6x** |
+| sosfiltfilt (IIR) | 64ch × 2^18, butter-8 | 432.69 ms | 174.90 ms | 124.64 ms | **2.5x / 3.5x** |
+| sosfilt (IIR, 1ch scan) | 1ch × 2^22, butter-8 | 36.78 ms | 13.56 ms | 11.16 ms | **2.7x / 3.3x** |
+| lfilter (IIR, 1ch scan) | 1ch × 2^22, butter-4 tf | 25.83 ms | 11.49 ms | 7.95 ms | **2.2x / 3.2x** |
+| coherence | 8ch × 2^18, nperseg=1024 | 416.00 ms | 129.71 ms | 135.88 ms | **3.2x / 3.1x** |
+| resample_poly | 4ch, 48k->44.1k (147/160) | 18.62 ms | 7.33 ms | 6.27 ms | **2.5x / 3.0x** |
+| filtfilt (FIR) | 8ch × 2^18, 257 taps | 173.05 ms | 63.32 ms | 60.19 ms | **2.7x / 2.9x** |
+| filtfilt (IIR) | 64ch × 2^18, butter-4 tf | 343.36 ms | 172.63 ms | 116.40 ms | **2.0x / 2.9x** |
+| lfilter (FIR) | 8ch × 2^18, 257 taps | 71.66 ms | 30.76 ms | 28.74 ms | **2.3x / 2.5x** |
+| fftconvolve | 2^19 × 1025 | 25.55 ms | 10.93 ms | 10.44 ms | **2.3x / 2.4x** |
+| peak_prominences | 2^20, 0.3M peaks | 38.56 ms | 22.09 ms | — | **1.7x** |
+| correlate (batched) | 64ch × 2^18, 4096 taps | 350.48 ms | 318.37 ms | 259.91 ms | **1.1x / 1.3x** |
+| lfilter (IIR) | 64ch × 2^18, butter-4 tf | 140.64 ms | 167.71 ms | 126.01 ms | **0.8x / 1.1x** |
+| correlate (auto) | 2^18 autocorrelation | 14.60 ms | 14.15 ms | 13.33 ms | **1.0x / 1.1x** |
+| find_peaks | 2^20, prominence=1 | 55.26 ms | 56.89 ms | — | **1.0x** |
+| sosfilt (IIR) | 64ch × 2^18, butter-8 | 190.10 ms | 203.47 ms | 133.81 ms | **0.9x / 1.4x** |
+| spectrogram | 4ch × 2^18 | 16.03 ms | 20.49 ms | 17.01 ms | **0.8x / 0.9x** |
+| fftconvolve (pair) | 2^18 × 2^18 | 14.98 ms | 21.17 ms | 21.28 ms | 0.7x / 0.7x |
+| resample (FFT) | 2^20 -> 2^18 | 12.66 ms | 20.35 ms | 18.76 ms | 0.6x / 0.7x |
+| hilbert | 2^20 | 30.23 ms | 47.05 ms | 48.14 ms | 0.6x / 0.6x |
+| istft | 4ch × 2^18, nperseg=1024 | 18.40 ms | 36.87 ms | 33.22 ms | 0.5x / 0.6x |
 
 Oct. 14 2026
 Running Mujoco? Yes!
