@@ -6,6 +6,7 @@ Oct. 15 2026
 
 geometry? Why not!
 <img width="960" height="480" alt="compare_concave_mesh_multiview" src="https://github.com/user-attachments/assets/e110c330-fad0-4c17-a6d3-654708ec3ae2" />
+<img width="700" height="600" alt="demo_cloth_drape_simulation" src="https://github.com/user-attachments/assets/f2846193-8ca1-4b0c-bed2-b6da094f9902" />
 
 
 mlx-signal? Yes!
