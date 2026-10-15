@@ -3,6 +3,11 @@
 This document summarizes the current state of the MLX OpenCL backend, highlighting key features, implemented primitives, and the overall progress. The backend aims to provide a complete, high‑performance OpenCL implementation of MLX’s core operations, with a focus on portability and distributed training.
 ---
 Oct. 15 2026
+
+geometry? Why not!
+<img width="960" height="480" alt="compare_concave_mesh_multiview" src="https://github.com/user-attachments/assets/e110c330-fad0-4c17-a6d3-654708ec3ae2" />
+
+
 mlx-signal? Yes!
 
 pytest -v
