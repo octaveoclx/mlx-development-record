@@ -4,7 +4,7 @@ This document summarizes the current state of the MLX OpenCL backend, highlighti
 ---
 Oct. 16 2026
 Grabbing something
-<img width="640" height="480" alt="demo_shadow_hand_cloth_drape" src="https://github.com/user-attachments/assets/ff67b200-2d31-4c25-af29-c028623641b8" />
+<img width="640" height="480" alt="demo_shadow_hand_cloth_drape" src="https://github.com/user-attachments/assets/2f2d618b-fb2a-43a1-a50f-ee02fd2a54e4" />
 
 
 Oct. 15 2026
