@@ -2,14 +2,22 @@
 
 This document summarizes the current state of the MLX OpenCL backend, highlighting key features, implemented primitives, and the overall progress. The backend aims to provide a complete, high‑performance OpenCL implementation of MLX’s core operations, with a focus on portability and distributed training.
 ---
+Oct. 17 2026
+Sensors
+
+<img width="640" height="480" alt="demo_tactile_shadow_hand" src="https://github.com/user-attachments/assets/460c40e1-b9c5-4131-adef-c44795f83d50" />
+
+
 Oct. 16 2026
 Grabbing something
+
 <img width="640" height="480" alt="demo_shadow_hand_cloth_drape" src="https://github.com/user-attachments/assets/2f2d618b-fb2a-43a1-a50f-ee02fd2a54e4" />
 
 
 Oct. 15 2026
 
 geometry? Why not!
+
 <img width="960" height="480" alt="compare_concave_mesh_multiview" src="https://github.com/user-attachments/assets/e110c330-fad0-4c17-a6d3-654708ec3ae2" />
 <img width="700" height="600" alt="demo_cloth_drape_simulation" src="https://github.com/user-attachments/assets/f2846193-8ca1-4b0c-bed2-b6da094f9902" />
 
