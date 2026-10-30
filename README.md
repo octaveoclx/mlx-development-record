@@ -2,6 +2,12 @@
 
 This document summarizes the current state of the MLX OpenCL backend, highlighting key features, implemented primitives, and the overall progress. The backend aims to provide a complete, high‑performance OpenCL implementation of MLX’s core operations, with a focus on portability and distributed training.
 ---
+Oct. 30 2026
+MLX-Audio？
+“Hello from OpenCL. ”
+[opencl_kokoro_test.wav](https://github.com/user-attachments/files/34174608/opencl_kokoro_test.wav)
+
+
 Oct. 21 2026
 G1
 <img width="640" height="480" alt="demo_unitree_g1_opencl" src="https://github.com/user-attachments/assets/086ad7a0-265a-4a36-a815-bdd40315e905" />
