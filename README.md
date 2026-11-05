@@ -2,6 +2,60 @@
 
 This document summarizes the current state of the MLX OpenCL backend, highlighting key features, implemented primitives, and the overall progress. The backend aims to provide a complete, high‑performance OpenCL implementation of MLX’s core operations, with a focus on portability and distributed training.
 ---
+Nov. 6 2026
+Eco Systems
+
+### Core & Integration Layer (6)
+
+- **MLX-OpenCL** — Core OpenCL backend runtime port for Apple's MLX array framework, enabling high-performance heterogeneous tensor computing across Intel, AMD, and diverse OpenCL accelerators.
+- **mlx-lm OpenCL** — Large Language Model (LLM) inference, parameter-efficient fine-tuning (LoRA/QLoRA), and 4-bit/8-bit weight quantization optimized for the MLX-OpenCL backend.
+- **mlx-comms** — Wireless communications and PHY-layer signal processing library providing GPU-accelerated 5G NR LDPC channel decoders (layered Min-Sum, BG1/BG2) with MLX tensor interop.
+- **oMLX OpenCL** — High-throughput LLM serving engine featuring continuous batching, tiered KV-caching, and OpenAI-compatible API serving on MLX-OpenCL.
+- **OpenCV MLX/OpenCL Bridge** — Zero-copy interoperability layer connecting OpenCV OpenCL `UMat`/`cl_mem` buffers with MLX arrays for unified computer vision pipelines.
+- **AV1 OpenCL/MLX Interop** — OpenCL-accelerated AV1 video decoding, reconstruction, and direct tensor ingestion pipeline for MLX.
+
+---
+
+### AI, Vision, Audio & Applications Layer (19)
+
+- **Faiss-MLX** — Dense vector similarity search, k-means clustering, and vector indexing library (Flat, IVF, PQ) adapted for GPU acceleration on MLX.
+- **FastSelect** — Accelerated feature selection library for high-dimensional tabular datasets, leveraging MLX tensor operations for fast ranking and subset evaluation.
+- **IsaacLab-MLX/OpenCL** — Robot simulation, reinforcement learning, and policy training environment (based on the NVIDIA Isaac Lab architecture) ported to the MLX-OpenCL foundation.
+- **MLX-DLSS** — Neural rendering, super-resolution, and temporal frame-generation inference pipeline implemented natively on MLX/OpenCL.
+- **OpenDDE-MLX** — All-atom biomolecular co-folding and structure prediction model rewritten in MLX, operating without PyTorch or CUDA dependencies.
+- **SPLADE-MLX** — Sparse lexical and expansion models (SPLADE) for high-precision neural text and visual information retrieval natively on MLX.
+- **gsplat-mlx** — Differentiable 3D Gaussian Splatting rasterization, scene reconstruction, and training pipeline accelerated on MLX/OpenCL.
+- **MFLUX** — FLUX diffusion models (text-to-image generation) ported to MLX, supporting multi-resolution image synthesis and LoRA adapters.
+- **mlx-audio** — Audio deep learning and processing toolkit featuring speech recognition (Whisper), audio generation, vocoders, and feature extraction.
+- **mlx-boosting** — Gradient Boosted Decision Trees (GBDT) and decision forest training and inference algorithms accelerated on MLX.
+- **mlx-cv** — Computer vision toolkit providing modern vision backbones (ResNet, ViT, ConvNeXt), detection heads, and augmentations for MLX.
+- **mlx-drive** — Autonomous driving perception and end-to-end trajectory planning framework (SparseDriveV2 architecture) with multi-camera spatial-temporal fusion.
+- **mlx-h3** — Pure MLX implementation of the MiniMax-H3 foundation models for generative text-to-video and text-to-audio inference.
+- **mlx-spatial** — 3D spatial intelligence library for novel view synthesis, point cloud processing, surface reconstruction, and image-to-3D pipelines.
+- **mlx-tune** — Unified model fine-tuning and parameter-efficient adaptation framework (PEFT, LoRA, QLoRA) with automated hyperparameter optimization.
+- **mlx-vis** — High-performance dimensionality reduction and data visualization suite (UMAP, t-SNE, PaCMAP) accelerated by MLX.
+- **mlx-vla OpenCL** — Vision-Language-Action (VLA) foundation models for robotic manipulation (e.g., OpenVLA) running on the MLX-OpenCL runtime.
+- **Project Sycamore** — Biomimetic wildfire drone-swarm simulation and multi-agent dynamics framework built on MLX.
+- **YOLO-MLX** — Real-time object detection, instance segmentation, and pose estimation framework (YOLO architecture) natively implemented on MLX.
+
+---
+
+### Scientific Computing, Graphs, Optimization & Physics Layer (12)
+
+- **mlx-clODE** — High-throughput GPU Ordinary Differential Equation (ODE) ensemble solvers and neural ODE integration for MLX-OpenCL.
+- **mlx-clOpt** — GPU-accelerated mathematical optimization framework supporting linear programming (LP), mixed-integer programming (MIP), and nonlinear optimization.
+- **mlx-geometry** — Differentiable computational geometry, polygon mesh processing, and differential geometry operators for geometric deep learning on MLX.
+- **mlx-graph-analytics** — Large-scale classical graph algorithm engine implementing PageRank, shortest paths, centrality metrics, and community detection on MLX-OpenCL.
+- **mlx-graphs** — Graph Neural Network (GNN) library providing graph convolutions, message passing layers, and graph pooling primitives (PyG equivalent) for MLX.
+- **mlx-lattice** — Submanifold sparse convolution and sparse voxel/point-cloud processing library for 3D perception and fluid dynamics simulations.
+- **mlx-learn** — Classical machine learning algorithms (clustering, linear models, dimensionality reduction) with a scikit-learn compatible API powered by MLX.
+- **mlx-nufft** — Non-Uniform Fast Fourier Transform (NUFFT) library for medical imaging (MRI reconstruction), astronomical signal processing, and non-Cartesian gridding.
+- **mlx-sci** — SciPy-compatible scientific computing suite implementing numerical linear algebra, special functions, and multidimensional interpolation on MLX-OpenCL.
+- **mlx-signal** — GPU-accelerated digital signal processing (DSP) library featuring filter design, wavelet transforms, STFT, and spectral analysis.
+- **mlx-sparse OpenCL** — High-performance sparse matrix linear algebra (CSR, COO, SpMV, SpMM) and iterative sparse linear solvers for MLX-OpenCL.
+- **MuJoCo-MLX/OpenCL** — Physics engine and robotic articulated rigid-body dynamics simulator (MJX port) accelerated with MLX on OpenCL and Metal devices.
+
+
 Oct. 30 2026
 
 MLX-Audio？
