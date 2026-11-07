@@ -2,7 +2,15 @@
 
 This document summarizes the current state of the MLX OpenCL backend, highlighting key features, implemented primitives, and the overall progress. The backend aims to provide a complete, high‑performance OpenCL implementation of MLX’s core operations, with a focus on portability and distributed training.
 ---
+Nov. 7 2026
+
+World Model? HJEPA
+
+<img width="2358" height="1470" alt="hjepa_run_visualization" src="https://github.com/user-attachments/assets/35fade4e-b291-4b76-99fe-1395a701ffa8" />
+
+
 Nov. 6 2026
+
 Eco Systems
 
 ### Core & Integration Layer (6)
